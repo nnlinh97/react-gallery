@@ -35,7 +35,7 @@ class App extends Component {
     // console.log(page);
     connectAPI(page, 'GET', null).then((res) => {
       const data = res.data.photos;
-      if(res.data){
+      if (res.data) {
         this.setState({
           listImage: [...this.state.listImage].concat(data.photo)
         })
@@ -44,12 +44,11 @@ class App extends Component {
           hasMore: false
         })
       }
-      
+
     })
   }
 
   render() {
-    console.log(this.state.listImage)
     let images = this.state.listImage.map((image, index) => {
       return <Image
         key={index}
@@ -63,15 +62,14 @@ class App extends Component {
         <div className="navbar navbar-default">
           <a className="navbar-brand">Explore</a>
         </div>
-        <InfiniteScroll
-          pageStart={0}
-          // loadMore={(i) => this.loadFunc(i)}
-          loadMore={this.loadFunc.bind(this)}
-          hasMore={this.state.hasMoreImage}
-          loader={loader}
-        >
-          {images}
-        </InfiniteScroll>
+          <InfiniteScroll
+            pageStart={0}
+            loadMore={(i) => this.loadFunc(i)}
+            hasMore={this.state.hasMoreImage}
+            loader={loader}
+          >
+            <div className="listImg">{images}</div>
+          </InfiniteScroll>
       </div>
     );
   }

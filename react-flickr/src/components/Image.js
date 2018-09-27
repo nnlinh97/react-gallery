@@ -27,22 +27,25 @@ class Image extends Component {
         let info = "";
         if (this.state.hover) {
             info = (
-                <div>
-                    <p>{this.props.index + 1}.&nbsp;<b>{image.title}</b></p>
-                    <label> by {image.ownername}</label><br />
-                    <label>{image.views} views</label>
+                <div className="img__description">
+                    <h4>{image.title}</h4>
+                    <p>by {image.ownername}</p>
+                    <p>{image.views} views</p>
                 </div>
             );
         }
 
         return (
-            <div className="responsive" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-                <div className="gallery">
-                    <a href="https://farm2.staticflickr.com/1917/43093640830_01bc8b0b34.jpg">
-                        <img src={image.url_s} alt="" width="300" height="200" />
-                    </a>
-                    {info}
-                </div>
+            <div className="singleImg"
+                onMouseEnter={this.onMouseEnter}
+                onMouseLeave={this.onMouseLeave}
+            >
+                <img
+
+                    src={image.url_s}
+                    alt={image.id}
+                />
+                {info}
             </div>
         );
     }
