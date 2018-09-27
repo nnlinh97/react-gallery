@@ -1,1 +1,1 @@
-export const URL = `https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=d47af61524de3b344c995d2b1546486c&extras=url_s%2Cowner_name%2Cviews&per_page=20&format=json&nojsoncallback=1&page=`;
+export const URL = `https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=9eefcdf404fa1507c6f3fe0faf43ffae&extras=url_s%2Cowner_name%2Cviews&per_page=20&format=json&nojsoncallback=1&page=`;
