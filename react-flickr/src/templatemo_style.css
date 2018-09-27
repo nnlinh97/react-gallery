@@ -12,9 +12,11 @@
     text-align: center;
 }
 .responsive {
+    widows: 200px;
+    height: 350px;
     padding: 0 6px;
     float: left;
     width: 25%;
-    margin-bottom: 150px;
+    margin-bottom: 35px;
 }
 
