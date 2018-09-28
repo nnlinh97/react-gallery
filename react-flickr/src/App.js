@@ -15,8 +15,9 @@ class App extends Component {
       hasMoreImage: true,
     }
   }
-  
+
   loadFunc = (page) => {
+    console.log(page)
     connectAPI(page, 'GET', null).then((res) => {
       const data = res.data.photos;
       if (res.data) {
@@ -33,6 +34,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.listImage)
     let images = this.state.listImage.map((image, index) => {
       return <Image
         key={index}
