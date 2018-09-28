@@ -15,24 +15,8 @@ class App extends Component {
       hasMoreImage: true,
     }
   }
-
-  // componentDidMount() {
-  //   connectAPI(1, 'GET', null).then((res) => {
-  //     // console.log(res.data);
-  //     const data = res.data.photos;
-  //     this.setState({
-  //       listImage: [...this.state.listImage].concat(data.photo),
-  //       page: data.page,
-  //       limit: data.perpage
-  //     });
-  //   });
-  // }
-
+  
   loadFunc = (page) => {
-    // if(page === 1){
-    //   page = 2;
-    // }
-    // console.log(page);
     connectAPI(page, 'GET', null).then((res) => {
       const data = res.data.photos;
       if (res.data) {
